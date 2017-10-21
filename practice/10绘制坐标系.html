@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas>您的浏览器不支持canvas，请升级浏览器</canvas>
+
+    <script>
+
+
+        // canvas的宽高在标签内部设置或者通过js设置  不在css中设置  会出现图像模糊 
+        // canvas的兼容性很好  一般支持canvas标签 就支持canvas的功能
+        // canvas的默认宽高为300*150
+        // canvas本省不能绘图  而是通过js完成绘图  canvas提供了大量的API
+        var canvas=document.querySelector("canvas");
+
+        canvas.width=600;
+        canvas.height=300;
+
+        canvas.style.border="1px solid red";
+        // 2d画笔
+        var context=canvas.getContext("2d");
+        // 3d画笔
+        // var webgl=canvas.getContext("webgl");
+
+        var space=20;
+        var aWidth=10;
+
+// x轴
+        context.moveTo(space,canvas.height-space);
+        context.lineTo(canvas.width-space,canvas.height-space);
+
+//x轴小三角
+
+        context.moveTo(canvas.width-space,canvas.height-space);
+        context.lineTo(canvas.width-space-aWidth,canvas.height-space-aWidth/2);
+        context.lineTo(canvas.width-space-aWidth,canvas.height-space+aWidth/2);
+        context.closePath();
+        context.fill();
+// y轴
+        context.moveTo(space,canvas.height-space);
+        context.lineTo(space,space);
+// y轴小三角
+        context.moveTo(space,space);
+        context.lineTo(space-aWidth/2,space+aWidth);
+        context.lineTo(space+aWidth/2,space+aWidth);
+        context.closePath();
+        context.fill();
+
+
+
+        
+
+        context.stroke();
+       
+
+    </script>
+</body>
+</html>

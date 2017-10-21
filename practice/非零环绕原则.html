@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas ></canvas>
+
+
+    <script>
+
+        // 获取canvas标签
+        var canvas=document.querySelector("canvas");
+        // 为canvas标签设置宽高  只能在标签内加或者通过js设置 不能再css样式中设置 （否则会出现划出的线模糊）
+        canvas.width=600;
+        canvas.height=400;
+        canvas.style.border="1px solid red";
+        // 设置2d图像的笔
+        var context=canvas.getContext("2d");
+// 设置3d图像的笔
+        // var webgl=canvas.getContext("webgl");
+
+        context.moveTo(100,100);
+        context.lineTo(500,100);
+        context.lineTo(500,300);
+        context.lineTo(100,300);
+        context.closePath();
+
+        // context.fillStyle="blue";
+
+        // context.fill();
+
+
+        context.moveTo(200,150);
+        context.lineTo(200,250);
+        context.lineTo(400,250);
+        context.lineTo(400,150);
+        context.closePath();
+
+        // context.fillStyle="red";
+
+        // context.fill();
+
+
+        context.stroke();
+
+    </script>
+</body>
+</html>

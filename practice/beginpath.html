@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas ></canvas>
+
+
+    <script>
+
+        // 获取canvas标签
+        var canvas=document.querySelector("canvas");
+        // 为canvas标签设置宽高  只能在标签内加或者通过js设置 不能再css样式中设置 （否则会出现划出的线模糊）
+        canvas.width=600;
+        canvas.height=300;
+        canvas.style.border="1px solid red";
+        // 设置2d图像的笔
+        var context=canvas.getContext("2d");
+// 设置3d图像的笔
+        // var wewbgl=canvas.getContext("webgl");
+// 因为不写beginPath会把之前的覆盖掉都是最后一个 颜色  且每次 开始都必须写stroke(),要不 前两个 没有线段
+        context.beginPath();
+        context.strokeStyle="red";
+        context.moveTo(100,50);
+        context.lineTo(200,50);
+        context.stroke();
+      
+
+
+
+
+        context.beginPath();
+        context.strokeStyle="green";
+        context.moveTo(100,80);
+        context.lineTo(200,80);
+        context.stroke();
+     
+
+         context.beginPath();
+         context.strokeStyle="yellow";
+        context.moveTo(100,110);
+        context.lineTo(200,110);
+        context.stroke();
+       
+
+    </script>
+</body>
+</html>

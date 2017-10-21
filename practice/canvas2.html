@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas ></canvas>
+
+
+    <script>
+
+        // 获取canvas标签
+        var canvas=document.querySelector("canvas");
+        // 为canvas标签设置宽高  只能在标签内加或者通过js设置 不能再css样式中设置 （否则会出现划出的线模糊）
+        canvas.width=600;
+        canvas.height=300;
+        canvas.style.border="1px solid red";
+   var context=canvas.getContext("2d");
+
+   context.moveTo(100,50);
+
+   context.lineTo(150,100);
+   context.lineTo(200,50);
+
+
+   context.moveTo(100,80);
+
+   context.lineTo(150,130);
+   context.lineTo(200,80);
+
+   context.moveTo(100,110);
+
+   context.lineTo(150,160);
+   context.lineTo(200,110);
+
+
+
+   context.lineWidth=10;
+
+   context.strokeStyle="red";
+
+
+//    context.lineCap=butt;//默认
+//    context.lineCap=square;//方角
+//    context.lineCap="round";//圆角
+// 设置过度点的 样式
+context.lineJoin="miter";
+// context.lineJoin="round";//圆边
+// context.lineJoin="bevel";//由尖角变平
+
+   context.stroke();
+
+    </script>
+</body>
+</html>

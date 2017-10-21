@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas>您的浏览器不支持canvas，请升级浏览器</canvas>
+
+    <script>
+
+
+        // canvas的宽高在标签内部设置或者通过js设置  不在css中设置  会出现图像模糊 
+        // canvas的兼容性很好  一般支持canvas标签 就支持canvas的功能
+        // canvas的默认宽高为300*150
+        // canvas本省不能绘图  而是通过js完成绘图  canvas提供了大量的API
+        var canvas=document.querySelector("canvas");
+
+        canvas.width=600;
+        canvas.height=300;
+
+        canvas.style.border="1px solid red";
+        // 2d画笔
+        var context=canvas.getContext("2d");
+        // 3d画笔
+        // var webgl=canvas.getContext("webgl");
+
+//方法 1.画正方形
+        // context.moveTo(10,10);
+        // context.lineTo(110,10);
+        // context.lineTo(110,110);
+        // context.lineTo(10,110);
+        // context.lineTo(10,10);
+
+// 方法 2.画正方形
+
+        // context.moveTo(10,10);
+        // context.lineTo(110,10);
+        // context.lineTo(110,110);
+        // context.lineTo(10,110);
+        // context.closePath();
+
+
+
+        // context.moveTo(35,35);
+        // context.lineTo(35,85);
+        // context.lineTo(85,85);
+        // context.lineTo(85,35);
+        // context.closePath();
+        // context.fill();
+
+
+
+
+
+        context.moveTo(10,10);
+        context.lineTo(110,10);
+        context.lineTo(110,110);
+        context.lineTo(10,110);
+        context.closePath();
+        context.fillStyle="red";
+        context.fill();
+//非零
+        // context.beginPath();
+        // context.moveTo(35,35);
+        // context.lineTo(85,35);
+        // context.lineTo(85,85);
+        // context.lineTo(35,85);
+        // context.closePath();
+        // context.fillStyle="blue";
+        // context.fill();
+
+        // 零  
+        context.beginPath(); 
+        context.moveTo(35,35);
+        context.lineTo(35,85);
+        context.lineTo(85,85);
+        context.lineTo(85,35);
+        context.closePath();
+        context.fillStyle="blue";
+        context.fill();
+
+
+
+        // context.stroke();
+
+
+    </script>
+</body>
+</html>
